@@ -303,9 +303,9 @@ USER root
 # docker run \
 # --name RStudioIDE \
 # --env PASSWORD=rstudio \
-# --mount type=bind,source="$(pwd)"/RStudioProjects,target=/home/rstudio/RStudioProjects \
-# --publish 127.0.0.1:8787:8787 \
+# --mount type=bind,source="${HOME}"/RStudioProjects,target=/home/rstudio/RStudioProjects \
 # --workdir /home/rstudio/RStudioProjects \
+# --publish 127.0.0.1:8787:8787 \
 # --detach --rm crcsas-rstudio:latest
 
 
@@ -323,7 +323,7 @@ USER root
 # docker run \
 # --name RStudioIDE \
 # --env PASSWORD=rstudio \
-# --mount type=bind,source="$(pwd)"/RStudioProjects,target=/home/rstudio/RStudioProjects \
+# --mount type=bind,source="${HOME}"/RStudioProjects,target=/home/nonroot/RStudioProjects \
+# --workdir /home/nonroot/RStudioProjects \
 # --publish 127.0.0.1:8787:8787 \
-# --workdir /home/rstudio/RStudioProjects \
 # --detach --rm crcsas-rstudio:latest
